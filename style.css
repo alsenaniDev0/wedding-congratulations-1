@@ -163,7 +163,7 @@ body {
 
 .hero-image {
     position: relative;
-    height: 470px;
+    height: 700px;
     overflow: hidden;
     background:
         radial-gradient(circle at center, rgba(255, 255, 255, 0.7), transparent 55%),
