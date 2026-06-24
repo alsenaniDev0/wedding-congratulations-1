@@ -22,11 +22,35 @@
     },
     "fields": [
         {
+            "key": "showGroomImage",
+            "label": "إظهار صورة العريس",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
             "key": "groomImage",
             "label": "صورة العريس",
             "type": "image",
-            "required": true,
-            "defaultValue": "https://placehold.co/900x1200/f5ead8/8a5a22?text=Groom",
+            "requiredWhen": {
+                "field": "showGroomImage",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showGroomImage",
+                "equals": "yes"
+            },
+            "defaultValue": "https://placehold.co/900x1200/f5ead8/8a5a22?text=العريس",
             "hint": "ارفع صورة فخمة وواضحة للعريس ويفضل أن تكون بالطول"
         },
         {
@@ -108,22 +132,17 @@
             "defaultValue": "نورة"
         },
         {
-            "key": "date",
-            "label": "التاريخ",
-            "type": "text",
+            "type": "date",
             "required": true,
-            "minLength": 3,
-            "maxLength": 80,
-            "defaultValue": "الخميس 20 يونيو 2026"
+            "label": "تاريخ الحفل",
+            "key": "date"
         },
         {
+            "type": "time",
             "key": "time",
-            "label": "الوقت",
-            "type": "text",
-            "required": true,
-            "minLength": 3,
-            "maxLength": 40,
-            "defaultValue": "09:00 مساءً"
+            "label": "وقت الحفل",
+            "required": false,
+            "defaultValue": "20:00"
         },
         {
             "key": "placeTitle",
@@ -235,7 +254,11 @@
     "sections": [
         {
             "key": "groomImage",
-            "selector": ".hero-image"
+            "selector": ".hero-image",
+            "visibleWhen": {
+                "field": "showGroomImage",
+                "equals": "yes"
+            }
         },
         {
             "key": "brideName",

@@ -764,3 +764,44 @@ body {
         width: 52px;
     }
 }
+
+/* Hide groom image option */
+.show-groom-no .hero-image {
+    display: none;
+}
+
+.show-groom-no .content {
+    margin-top: 0;
+    padding-top: 58px;
+}
+
+.show-groom-no .congrats-card {
+    background:
+        radial-gradient(circle at top, rgba(215, 170, 85, 0.18), transparent 32%),
+        linear-gradient(180deg, rgba(255, 250, 241, 0.96), rgba(255, 255, 255, 0.98));
+}
+
+.show-groom-no .small-title {
+    margin-top: 8px;
+}
+
+.show-groom-no .main-title {
+    margin-top: 8px;
+}
+
+.show-groom-no .content::before {
+    content: "❦";
+    display: block;
+    margin: 0 auto 14px;
+    color: var(--primaryColor);
+    font-size: 42px;
+    line-height: 1;
+    opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+    .show-groom-no .content {
+        margin-top: 0;
+        padding-top: 46px;
+    }
+}
