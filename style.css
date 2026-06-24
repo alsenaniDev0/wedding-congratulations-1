@@ -1,0 +1,766 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgColor: #f6efe3;
+    --surfaceColor: #fffaf1;
+    --primaryColor: #a8742a;
+    --accentColor: #d7aa55;
+    --textColor: #3e2a18;
+    --mutedColor: #8a765f;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Tahoma", "Arial", sans-serif;
+
+    /* Default fallback */
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.85), transparent 35%),
+        linear-gradient(180deg, #f6efe3, #fff9ee 45%, #f2e5d1);
+    color: #3e2a18;
+
+    /* Dynamic colors if template values exist */
+    background:
+        radial-gradient(circle at top, rgba(255, 255, 255, 0.85), transparent 35%),
+        linear-gradient(180deg, var(--bgColor), #fff9ee 45%, #f2e5d1);
+    color: var(--textColor);
+
+    overflow-x: hidden;
+}
+
+.wedding-congrats-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 28px 14px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.page-art {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(30px);
+    opacity: 0.45;
+    animation: floatGlow 8s ease-in-out infinite;
+}
+
+.glow-1 {
+    width: 280px;
+    height: 280px;
+    top: 8%;
+    right: -80px;
+    background: rgba(215, 170, 85, 0.28);
+}
+
+.glow-2 {
+    width: 240px;
+    height: 240px;
+    bottom: 10%;
+    left: -70px;
+    background: rgba(255, 255, 255, 0.8);
+    animation-delay: 2s;
+}
+
+.gold-line {
+    position: absolute;
+    width: 220px;
+    height: 420px;
+    border: 1px solid rgba(168, 116, 42, 0.22);
+    border-radius: 50%;
+    transform: rotate(18deg);
+}
+
+.gold-line-1 {
+    top: -80px;
+    right: -95px;
+}
+
+.gold-line-2 {
+    bottom: -100px;
+    left: -90px;
+}
+
+.flower {
+    position: absolute;
+    width: 130px;
+    height: 180px;
+    opacity: 0.26;
+}
+
+.flower::before,
+.flower::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 150px;
+    background: linear-gradient(transparent, var(--primaryColor), transparent);
+    right: 50%;
+    top: 10px;
+    transform: rotate(12deg);
+}
+
+.flower::after {
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(168, 116, 42, 0.5);
+    border-left: 0;
+    border-bottom: 0;
+    border-radius: 50%;
+    background: transparent;
+    top: 35px;
+    right: 35px;
+    transform: rotate(-25deg);
+}
+
+.flower-1 {
+    top: 22%;
+    right: 12px;
+}
+
+.flower-2 {
+    bottom: 16%;
+    left: 14px;
+    transform: scaleX(-1);
+}
+
+.congrats-card {
+    width: 100%;
+    max-width: 680px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 250, 241, 0.92), rgba(255, 255, 255, 0.96)),
+        radial-gradient(circle at top, rgba(215, 170, 85, 0.22), transparent 38%);
+    box-shadow:
+        0 28px 80px rgba(77, 48, 20, 0.18),
+        inset 0 0 0 1px rgba(168, 116, 42, 0.25);
+    animation: cardEnter 1s ease both;
+}
+
+.congrats-card::before {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(168, 116, 42, 0.18);
+    border-radius: 26px;
+    pointer-events: none;
+    z-index: 4;
+}
+
+.hero-image {
+    position: relative;
+    height: 470px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.7), transparent 55%),
+        linear-gradient(180deg, #eee4d6, #fff7ea);
+}
+
+.groom-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.03) saturate(0.92);
+    transform: scale(1.02);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0, 0, 0, 0.45) 76%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 58%, rgba(0, 0, 0, 0.45) 76%, transparent 100%);
+}
+
+.hero-image::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 18% 20%, rgba(255, 255, 255, 0.42), transparent 25%),
+        radial-gradient(circle at 84% 32%, rgba(215, 170, 85, 0.18), transparent 30%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 250, 241, 0.7));
+    z-index: 1;
+}
+
+.hero-fade {
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 210px;
+    background:
+        linear-gradient(to bottom, transparent, rgba(255, 250, 241, 0.8) 45%, rgba(255, 250, 241, 1) 100%);
+    z-index: 2;
+}
+
+.hero-smoke {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background:
+        radial-gradient(circle at 10% 70%, rgba(255, 255, 255, 0.85), transparent 25%),
+        radial-gradient(circle at 90% 74%, rgba(255, 255, 255, 0.78), transparent 28%),
+        radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.92), transparent 38%);
+    mix-blend-mode: screen;
+}
+
+.content {
+    position: relative;
+    z-index: 5;
+    padding: 0 34px 42px;
+    margin-top: -125px;
+    text-align: center;
+}
+
+.small-title {
+    display: inline-flex;
+    padding: 8px 18px;
+    margin-bottom: 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.66);
+    border: 1px solid rgba(168, 116, 42, 0.22);
+    color: var(--primaryColor);
+    font-size: 15px;
+    box-shadow: 0 12px 30px rgba(80, 50, 20, 0.06);
+    animation: fadeUp 0.9s ease both;
+}
+
+.main-title {
+    font-size: clamp(42px, 9vw, 76px);
+    line-height: 1.1;
+    color: #a8742a;
+    color: var(--primaryColor);
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+    text-shadow: 0 10px 34px rgba(168, 116, 42, 0.17);
+    animation: fadeUp 0.9s ease 0.12s both;
+}
+
+.subtitle {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #4b3420;
+    animation: fadeUp 0.9s ease 0.2s both;
+}
+
+.ornament-divider,
+.bottom-symbol {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 18px auto 22px;
+    color: var(--accentColor);
+}
+
+.ornament-divider span,
+.bottom-symbol span {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 116, 42, 0.55), transparent);
+}
+
+.ornament-divider strong,
+.bottom-symbol strong {
+    color: var(--primaryColor);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.message {
+    max-width: 540px;
+    margin: 0 auto;
+    font-size: 19px;
+    line-height: 2.05;
+    color: #4a3421;
+    animation: fadeUp 0.9s ease 0.28s both;
+}
+
+.couple-frame {
+    position: relative;
+    margin: 34px auto 28px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    border-radius: 22px;
+    background: rgba(255, 252, 246, 0.72);
+    border: 1px solid rgba(168, 116, 42, 0.42);
+    box-shadow:
+        0 20px 45px rgba(90, 58, 25, 0.08),
+        inset 0 0 0 5px rgba(255, 255, 255, 0.45);
+    animation: fadeUp 0.9s ease 0.36s both;
+}
+
+.couple-frame::before,
+.couple-frame::after {
+    content: "❦";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--accentColor);
+    font-size: 24px;
+}
+
+.couple-frame::before {
+    right: 10px;
+}
+
+.couple-frame::after {
+    left: 10px;
+}
+
+.couple-name span {
+    display: block;
+    margin-bottom: 6px;
+    color: #6f553b;
+    font-size: 15px;
+}
+
+.couple-name strong {
+    display: block;
+    color: var(--primaryColor);
+    font-size: clamp(34px, 8vw, 58px);
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.heart-mark {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--primaryColor);
+    border: 1px solid rgba(168, 116, 42, 0.38);
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 12px 28px rgba(168, 116, 42, 0.12);
+}
+
+.heart-mark span {
+    font-size: 22px;
+}
+
+.event-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 24px 0 18px;
+    animation: fadeUp 0.9s ease 0.44s both;
+}
+
+.detail-card {
+    padding: 16px 12px;
+    border-radius: 18px;
+    background: rgba(255, 250, 241, 0.72);
+    border: 1px solid rgba(168, 116, 42, 0.2);
+    box-shadow: 0 14px 28px rgba(90, 58, 25, 0.06);
+}
+
+.detail-icon {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primaryColor), var(--accentColor));
+    color: #fff;
+    font-size: 18px;
+    box-shadow: 0 10px 18px rgba(168, 116, 42, 0.25);
+}
+
+.detail-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.detail-link:hover {
+    transform: translateY(-4px);
+    border-color: rgba(168, 116, 42, 0.55);
+    box-shadow: 0 18px 38px rgba(90, 58, 25, 0.12);
+}
+
+.show-bride-no .couple-frame {
+    grid-template-columns: 1fr;
+    max-width: 360px;
+}
+
+.show-bride-no [data-section="brideName"],
+.show-bride-no [data-section="brideDivider"] {
+    display: none;
+}
+
+.show-bride-no .couple-name strong {
+    font-size: clamp(44px, 10vw, 68px);
+}
+
+.detail-card small {
+    display: block;
+    color: var(--mutedColor);
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.detail-card strong {
+    display: block;
+    color: var(--textColor);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 170px;
+    padding: 13px 28px;
+    margin: 4px auto 30px;
+    border-radius: 999px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primaryColor), var(--accentColor), var(--primaryColor));
+    background-size: 220% 220%;
+    box-shadow: 0 16px 34px rgba(168, 116, 42, 0.28);
+    animation: buttonGlow 3s ease infinite, fadeUp 0.9s ease 0.52s both;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.location-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 18px 40px rgba(168, 116, 42, 0.36);
+}
+
+.feelings-section,
+.rsvp-section {
+    margin-top: 26px;
+    animation: fadeUp 0.9s ease both;
+}
+
+.feelings-section {
+    animation-delay: 0.6s;
+}
+
+.rsvp-section {
+    animation-delay: 0.68s;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 8px;
+}
+
+.section-heading span {
+    width: 78px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(168, 116, 42, 0.62), transparent);
+}
+
+.section-heading h2 {
+    font-size: 30px;
+    color: var(--textColor);
+    font-weight: 500;
+}
+
+.section-description {
+    color: var(--mutedColor);
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 18px;
+}
+
+.feelings-form {
+    position: relative;
+    padding: 26px 28px 24px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid rgba(168, 116, 42, 0.16);
+    box-shadow:
+        0 24px 55px rgba(80, 50, 20, 0.11),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(8px);
+}
+
+.form-decoration {
+    position: absolute;
+    right: 22px;
+    bottom: 28px;
+    width: 58px;
+    height: 90px;
+    color: var(--primaryColor);
+    opacity: 0.32;
+    pointer-events: none;
+}
+
+.feather {
+    display: block;
+    font-size: 58px;
+    transform: rotate(-15deg);
+}
+
+.form-decoration small {
+    position: absolute;
+    left: 2px;
+    bottom: 4px;
+    font-size: 20px;
+}
+
+.form-row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 105px 1fr;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.form-label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+    color: var(--textColor);
+    font-size: 15px;
+}
+
+.form-label i {
+    font-style: normal;
+    color: var(--primaryColor);
+}
+
+.feelings-form input,
+.feelings-form textarea {
+    width: 100%;
+    border: 1px solid rgba(168, 116, 42, 0.28);
+    background: rgba(255, 252, 246, 0.9);
+    border-radius: 14px;
+    padding: 14px 16px;
+    color: var(--textColor);
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    box-shadow: inset 0 3px 10px rgba(80, 50, 20, 0.04);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feelings-form textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.feelings-form input:focus,
+.feelings-form textarea:focus {
+    border-color: rgba(168, 116, 42, 0.62);
+    box-shadow: 0 0 0 4px rgba(215, 170, 85, 0.14);
+}
+
+.send-feeling-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    min-width: 210px;
+    margin-top: 6px;
+    padding: 14px 28px;
+    border: 0;
+    border-radius: 999px;
+    cursor: pointer;
+    color: #fff;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primaryColor), var(--accentColor), var(--primaryColor));
+    background-size: 220% 220%;
+    box-shadow:
+        0 15px 30px rgba(168, 116, 42, 0.32),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.34);
+    animation: buttonGlow 3s ease infinite;
+}
+
+.send-feeling-btn b {
+    display: inline-block;
+    transform: rotate(180deg);
+    font-size: 18px;
+}
+
+.rsvp-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.rsvp-card {
+    min-height: 120px;
+    padding: 18px 12px;
+    border-radius: 20px;
+    border: 1px solid rgba(168, 116, 42, 0.32);
+    background: rgba(255, 250, 241, 0.74);
+    color: var(--textColor);
+    cursor: pointer;
+    font-family: inherit;
+    box-shadow: 0 16px 34px rgba(80, 50, 20, 0.07);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.rsvp-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(168, 116, 42, 0.7);
+    box-shadow: 0 20px 42px rgba(80, 50, 20, 0.12);
+}
+
+.rsvp-icon {
+    width: 42px;
+    height: 42px;
+    margin: 0 auto 10px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 116, 42, 0.5);
+    color: var(--primaryColor);
+    font-size: 23px;
+    line-height: 1;
+}
+
+.rsvp-card strong {
+    display: block;
+    font-size: 16px;
+    line-height: 1.6;
+    font-weight: 600;
+}
+
+.closing {
+    margin: 32px auto 0;
+    max-width: 520px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #5b412a;
+    animation: fadeUp 0.9s ease 0.76s both;
+}
+
+.bottom-symbol {
+    margin-bottom: 0;
+}
+
+@keyframes cardEnter {
+    from {
+        opacity: 0;
+        transform: translateY(34px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonGlow {
+
+    0%,
+    100% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+@keyframes floatGlow {
+
+    0%,
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+
+    50% {
+        transform: translateY(-24px) translateX(12px);
+    }
+}
+
+@media (max-width: 640px) {
+    .wedding-congrats-page {
+        padding: 18px 10px;
+    }
+
+    .congrats-card {
+        border-radius: 28px;
+    }
+
+    .hero-image {
+        height: 390px;
+    }
+
+    .content {
+        padding: 0 20px 34px;
+        margin-top: -105px;
+    }
+
+    .message {
+        font-size: 17px;
+    }
+
+    .couple-frame {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        padding: 22px 18px;
+    }
+
+    .heart-mark {
+        margin: 0 auto;
+    }
+
+    .event-details {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        text-align: right;
+    }
+
+    .rsvp-options {
+        grid-template-columns: 1fr;
+    }
+
+    .rsvp-card {
+        min-height: 92px;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .section-heading span {
+        width: 52px;
+    }
+}

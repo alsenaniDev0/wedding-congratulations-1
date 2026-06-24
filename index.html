@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body style="
+    --bgColor: {{bgColor}};
+    --surfaceColor: {{surfaceColor}};
+    --primaryColor: {{primaryColor}};
+    --accentColor: {{accentColor}};
+    --textColor: {{textColor}};
+    --mutedColor: {{mutedColor}};
+">
+
+    <main class="wedding-congrats-page show-bride-{{showBrideName}}">
+
+        <div class="page-art" aria-hidden="true">
+            <span class="gold-line gold-line-1"></span>
+            <span class="gold-line gold-line-2"></span>
+            <span class="flower flower-1"></span>
+            <span class="flower flower-2"></span>
+            <span class="glow glow-1"></span>
+            <span class="glow glow-2"></span>
+        </div>
+
+        <section class="congrats-card">
+
+            <section class="hero-image" data-section="groomImage">
+                <img src="{{groomImage}}" alt="صورة العريس" class="groom-photo" />
+                <div class="hero-fade"></div>
+                <div class="hero-smoke"></div>
+            </section>
+
+            <section class="content">
+
+                <p class="small-title" data-section="smallTitle">
+                    {{smallTitle}}
+                </p>
+
+                <h1 class="main-title" data-section="title">
+                    {{title}}
+                </h1>
+
+                <p class="subtitle" data-section="subtitle">
+                    {{subtitle}}
+                </p>
+
+                <div class="ornament-divider" aria-hidden="true">
+                    <span></span>
+                    <strong>❦</strong>
+                    <span></span>
+                </div>
+
+                <p class="message" data-section="message">
+                    {{message}}
+                </p>
+
+                <section class="couple-frame" data-section="names">
+                    <div class="couple-name" data-section="groomName">
+                        <span>العريس</span>
+                        <strong>{{groomName}}</strong>
+                    </div>
+
+                    <div class="heart-mark" aria-hidden="true" data-section="brideDivider">
+                        <span>&</span>
+                    </div>
+
+                    <div class="couple-name" data-section="brideName">
+                        <span>العروس</span>
+                        <strong>{{brideName}}</strong>
+                    </div>
+                </section>
+
+                <section class="event-details" data-section="details">
+
+                    <div class="detail-card" data-section="date">
+                        <span class="detail-icon">📅</span>
+                        <div>
+                            <small>التاريخ</small>
+                            <strong>{{date}}</strong>
+                        </div>
+                    </div>
+
+                    <div class="detail-card" data-section="time">
+                        <span class="detail-icon">⏰</span>
+                        <div>
+                            <small>الوقت</small>
+                            <strong>{{time}}</strong>
+                        </div>
+                    </div>
+
+                    <a href="{{locationUrl}}" target="_blank" rel="noopener" class="detail-card detail-link"
+                        data-section="place">
+                        <span class="detail-icon">📍</span>
+                        <div>
+                            <small>المكان</small>
+                            <strong>{{placeTitle}}</strong>
+                        </div>
+                    </a>
+
+                </section>
+
+                <a href="{{locationUrl}}" target="_blank" rel="noopener" class="location-btn"
+                    data-section="locationButton">
+                    عرض الموقع
+                </a>
+
+                <section class="feelings-section" data-section="feelings" data-feature="feelings">
+
+                    <div class="section-heading">
+                        <span></span>
+                        <h2>{{feelingsTitle}}</h2>
+                        <span></span>
+                    </div>
+
+                    <p class="section-description">
+                        {{feelingsDescription}}
+                    </p>
+
+                    <form class="feelings-form" data-feature-action="submit-feeling">
+
+                        <div class="form-decoration" aria-hidden="true">
+                            <span class="feather">✒</span>
+                            <small>♡</small>
+                        </div>
+
+                        <label class="form-row">
+                            <span class="form-label">
+                                <strong>الاسم</strong>
+                                <i>♡</i>
+                            </span>
+                            <input type="text" name="guestName" placeholder="اكتب اسمك هنا" />
+                        </label>
+
+                        <label class="form-row">
+                            <span class="form-label">
+                                <strong>رسالتك</strong>
+                                <i>💌</i>
+                            </span>
+                            <textarea name="message" rows="4" placeholder="اكتب رسالتك من القلب..."></textarea>
+                        </label>
+
+                        <button type="submit" class="send-feeling-btn">
+                            <span>إرسال المشاعر</span>
+                            <b>➤</b>
+                        </button>
+
+                    </form>
+
+                </section>
+
+                <section class="rsvp-section" data-section="rsvp" data-feature="rsvp">
+
+                    <div class="section-heading">
+                        <span></span>
+                        <h2>{{rsvpTitle}}</h2>
+                        <span></span>
+                    </div>
+
+                    <p class="section-description">
+                        {{rsvpDescription}}
+                    </p>
+
+                    <div class="rsvp-options">
+
+                        <button type="button" class="rsvp-card" data-rsvp-value="attending">
+                            <span class="rsvp-icon">✓</span>
+                            <strong>سأحضر</strong>
+                        </button>
+
+                        <button type="button" class="rsvp-card" data-rsvp-value="not_attending">
+                            <span class="rsvp-icon">×</span>
+                            <strong>لن أستطيع الحضور</strong>
+                        </button>
+
+                        <button type="button" class="rsvp-card" data-rsvp-value="maybe">
+                            <span class="rsvp-icon">؟</span>
+                            <strong>لم أقرر بعد</strong>
+                        </button>
+
+                    </div>
+
+                </section>
+
+                <p class="closing" data-section="closing">
+                    {{closing}}
+                </p>
+
+                <div class="bottom-symbol" aria-hidden="true">
+                    <span></span>
+                    <strong>♥</strong>
+                    <span></span>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>

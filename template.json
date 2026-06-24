@@ -1,0 +1,301 @@
+{
+    "id": "luxury-wedding-congratulations",
+    "name": "تهنئة زفاف فاخرة",
+    "version": "1.0.0",
+    "html": "index.html",
+    "css": "style.css",
+    "features": {
+        "feelings": {
+            "enabled": true,
+            "approvalMode": "manual",
+            "preventDuplicate": true,
+            "rateLimitMinutes": 5,
+            "title": "مشاركة المشاعر",
+            "description": "يستطيع الزائر كتابة اسمه ورسالته للعروسين"
+        },
+        "rsvp": {
+            "enabled": true,
+            "preventDuplicate": true,
+            "title": "تأكيد الحضور",
+            "description": "يستطيع الزائر اختيار حالة الحضور"
+        }
+    },
+    "fields": [
+        {
+            "key": "groomImage",
+            "label": "صورة العريس",
+            "type": "image",
+            "required": true,
+            "defaultValue": "https://placehold.co/900x1200/f5ead8/8a5a22?text=Groom",
+            "hint": "ارفع صورة فخمة وواضحة للعريس ويفضل أن تكون بالطول"
+        },
+        {
+            "key": "smallTitle",
+            "label": "النص العلوي",
+            "type": "text",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 80,
+            "defaultValue": "بكل الحب والفرح"
+        },
+        {
+            "key": "title",
+            "label": "العنوان",
+            "type": "text",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 60,
+            "defaultValue": "تهنئة زفاف"
+        },
+        {
+            "key": "subtitle",
+            "label": "النص أسفل العنوان",
+            "type": "textarea",
+            "required": true,
+            "minLength": 10,
+            "maxLength": 160,
+            "defaultValue": "بارك الله لكما وبارك عليكما وجمع بينكما في خير"
+        },
+        {
+            "key": "message",
+            "label": "رسالة التهنئة",
+            "type": "textarea",
+            "required": true,
+            "minLength": 10,
+            "maxLength": 360,
+            "defaultValue": "في يومكما المشرق، نرسل لكما أصدق التهاني وأطيب الأمنيات، سائلين الله أن يجعل حياتكما مليئة بالمودة والرحمة، وأن يكتب لكما السعادة الدائمة والتوفيق في كل خطوة."
+        },
+        {
+            "key": "groomName",
+            "label": "اسم العريس",
+            "type": "text",
+            "required": true,
+            "minLength": 2,
+            "maxLength": 40,
+            "defaultValue": "محمد"
+        },
+        {
+            "key": "showBrideName",
+            "label": "إظهار اسم العروس",
+            "type": "select",
+            "required": true,
+            "defaultValue": "yes",
+            "options": [
+                {
+                    "label": "نعم",
+                    "value": "yes"
+                },
+                {
+                    "label": "لا",
+                    "value": "no"
+                }
+            ]
+        },
+        {
+            "key": "brideName",
+            "label": "اسم العروس",
+            "type": "text",
+            "requiredWhen": {
+                "field": "showBrideName",
+                "equals": "yes"
+            },
+            "visibleWhen": {
+                "field": "showBrideName",
+                "equals": "yes"
+            },
+            "minLength": 2,
+            "maxLength": 40,
+            "defaultValue": "سارة"
+        },
+        {
+            "key": "date",
+            "label": "التاريخ",
+            "type": "text",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 80,
+            "defaultValue": "الخميس 20 يونيو 2026"
+        },
+        {
+            "key": "time",
+            "label": "الوقت",
+            "type": "text",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 40,
+            "defaultValue": "09:00 مساءً"
+        },
+        {
+            "key": "placeTitle",
+            "label": "مكان المناسبة",
+            "type": "text",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 80,
+            "defaultValue": "قاعة الاحتفال - الرياض"
+        },
+        {
+            "key": "locationUrl",
+            "label": "الموقع",
+            "type": "map",
+            "required": true,
+            "placeholder": "اختر الموقع من الخريطة",
+            "hint": "سيتم استخدام الموقع كرابط قابل للضغط"
+        },
+        {
+            "key": "feelingsTitle",
+            "label": "عنوان مشاركة المشاعر",
+            "type": "text",
+            "required": true,
+            "maxLength": 60,
+            "defaultValue": "مشاركة المشاعر"
+        },
+        {
+            "key": "feelingsDescription",
+            "label": "وصف مشاركة المشاعر",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 160,
+            "defaultValue": "اكتب رسالة جميلة للعروسين لتبقى ذكرى من القلب."
+        },
+        {
+            "key": "rsvpTitle",
+            "label": "عنوان تأكيد الحضور",
+            "type": "text",
+            "required": true,
+            "maxLength": 60,
+            "defaultValue": "تأكيد الحضور"
+        },
+        {
+            "key": "rsvpDescription",
+            "label": "وصف تأكيد الحضور",
+            "type": "textarea",
+            "required": true,
+            "maxLength": 160,
+            "defaultValue": "يسعدنا معرفة حضورك للمناسبة."
+        },
+        {
+            "key": "closing",
+            "label": "رسالة الختام",
+            "type": "textarea",
+            "required": true,
+            "minLength": 3,
+            "maxLength": 180,
+            "defaultValue": "اللهم اجعل بينهما مودة ورحمة، واكتب لهما السعادة في الدنيا والآخرة."
+        },
+        {
+            "key": "bgColor",
+            "label": "لون الخلفية",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#f6efe3",
+            "formTab": "design"
+        },
+        {
+            "key": "surfaceColor",
+            "label": "لون البطاقة",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#fffaf1",
+            "formTab": "design"
+        },
+        {
+            "key": "primaryColor",
+            "label": "اللون الذهبي الأساسي",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#a8742a",
+            "formTab": "design"
+        },
+        {
+            "key": "accentColor",
+            "label": "لون اللمعة الذهبية",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#d7aa55",
+            "formTab": "design"
+        },
+        {
+            "key": "textColor",
+            "label": "لون النص",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#3e2a18",
+            "formTab": "design"
+        },
+        {
+            "key": "mutedColor",
+            "label": "لون النص الثانوي",
+            "type": "color",
+            "required": true,
+            "defaultValue": "#8a765f",
+            "formTab": "design"
+        }
+    ],
+    "sections": [
+        {
+            "key": "groomImage",
+            "selector": ".hero-image"
+        },
+        {
+            "key": "brideName",
+            "selector": "[data-section='brideName']",
+            "visibleWhen": {
+                "field": "showBrideName",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "brideDivider",
+            "selector": "[data-section='brideDivider']",
+            "visibleWhen": {
+                "field": "showBrideName",
+                "equals": "yes"
+            }
+        },
+        {
+            "key": "place",
+            "selector": "[data-section='place']"
+        },
+        {
+            "key": "locationButton",
+            "selector": "[data-section='locationButton']"
+        },
+        {
+            "key": "smallTitle",
+            "selector": ".small-title"
+        },
+        {
+            "key": "title",
+            "selector": ".main-title"
+        },
+        {
+            "key": "subtitle",
+            "selector": ".subtitle"
+        },
+        {
+            "key": "message",
+            "selector": ".message"
+        },
+        {
+            "key": "names",
+            "selector": ".couple-frame"
+        },
+        {
+            "key": "details",
+            "selector": ".event-details"
+        },
+        {
+            "key": "feelings",
+            "selector": ".feelings-section"
+        },
+        {
+            "key": "rsvp",
+            "selector": ".rsvp-section"
+        },
+        {
+            "key": "closing",
+            "selector": ".closing"
+        }
+    ]
+}
