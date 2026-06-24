@@ -1,6 +1,6 @@
 {
-    "id": "luxury-wedding-congratulations",
-    "name": "تهنئة زفاف فاخرة",
+    "id": "luxury-wedding-invite-1",
+    "name": "دعوة زفاف فاخرة",
     "version": "1.0.0",
     "html": "index.html",
     "css": "style.css",
@@ -10,7 +10,7 @@
             "approvalMode": "manual",
             "preventDuplicate": true,
             "rateLimitMinutes": 5,
-            "title": "مشاركة المشاعر",
+            "title": "مشاركة التهاني والمشاعر",
             "description": "يستطيع الزائر كتابة اسمه ورسالته للعروسين"
         },
         "rsvp": {
@@ -70,7 +70,7 @@
             "required": true,
             "minLength": 3,
             "maxLength": 60,
-            "defaultValue": "تهنئة زفاف"
+            "defaultValue": "دعوة زفاف"
         },
         {
             "key": "subtitle",
@@ -83,12 +83,12 @@
         },
         {
             "key": "message",
-            "label": "رسالة التهنئة",
+            "label": "نص الدعوة",
             "type": "textarea",
             "required": true,
             "minLength": 10,
             "maxLength": 360,
-            "defaultValue": "في يومكما المشرق، نرسل لكما أصدق التهاني وأطيب الأمنيات، سائلين الله أن يجعل حياتكما مليئة بالمودة والرحمة، وأن يكتب لكما السعادة الدائمة والتوفيق في كل خطوة."
+            "defaultValue": "بكل مشاعر الفرح والامتنان، نتشرف بدعوتكم لحضور حفل زفافنا ومشاركتنا هذه الليلة السعيدة. وجودكم بيننا يزيد فرحتنا جمالًا، وحضوركم شرف نعتز به وذكرى تبقى في القلب."
         },
         {
             "key": "groomName",
