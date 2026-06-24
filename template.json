@@ -25,6 +25,7 @@
             "key": "showGroomImage",
             "label": "إظهار صورة العريس",
             "type": "select",
+            "formTab": "design",
             "required": true,
             "defaultValue": "yes",
             "options": [
