@@ -122,60 +122,71 @@
                         {{feelingsDescription}}
                     </p>
 
-                    <section class="feelings-section" data-feature="feelings">
-                        <div class="section-heading">
-                            <span>شارك مشاعرك</span>
-                            <h2>اترك رسالة جميلة</h2>
-                            <p>شارك كلماتك ومشاعرك مع أصحاب الدعوة</p>
-                        </div>
+                    <div class="interaction-card">
 
-                        <form class="feelings-form" data-feature-action="submit-feeling">
-                            <label class="form-row">
-                                <span class="form-label">
-                                    <strong>الاسم</strong>
-                                </span>
-                                <input type="text" name="guestName" placeholder="اكتب اسمك هنا" maxlength="60" />
-                            </label>
+                        <p class="feeling-notice" data-feeling-notice>
+                            تنبيه: رسالتك لن تظهر مباشرة، وستحتاج موافقة صاحب الدعوة قبل نشرها للزوار.
+                        </p>
 
-                            <label class="form-row">
-                                <span class="form-label">
-                                    <strong>رسالتك</strong>
-                                </span>
-                                <textarea name="message" rows="4" placeholder="اكتب رسالتك من القلب..."
-                                    maxlength="220"></textarea>
-                            </label>
+                        <input class="interaction-input" type="text" placeholder="اسمك" maxlength="60"
+                            data-feeling-name />
 
-                            <button type="submit" class="send-feeling-btn">
-                                <span>إرسال المشاعر</span>
-                            </button>
-                        </form>
-                    </section>
+                        <textarea class="interaction-textarea" placeholder="اكتب رسالتك هنا..." maxlength="220"
+                            data-feeling-message></textarea>
+
+                        <button type="button" class="interaction-submit send-feeling-btn" data-send-feeling>
+                            إرسال الرسالة
+                        </button>
+
+                        <p class="interaction-message" data-feeling-result></p>
+
+                    </div>
+
+                    <div class="feelings-list" data-feelings-list></div>
 
                 </section>
 
-                <section class="rsvp-section" data-feature="rsvp">
+
+                <section class="rsvp-section" data-section="rsvp" data-feature="rsvp">
+
                     <div class="section-heading">
-                        <span>تأكيد الحضور</span>
-                        <h2>هل ستحضر؟</h2>
-                        <p>يسعدنا معرفة حضورك للمناسبة</p>
+                        <span></span>
+                        <h2>{{rsvpTitle}}</h2>
+                        <span></span>
                     </div>
 
-                    <div class="rsvp-options">
-                        <button type="button" class="rsvp-card" data-rsvp-value="attending">
-                            <span class="rsvp-icon">✅</span>
-                            <strong>سأحضر</strong>
-                        </button>
+                    <p class="section-description">
+                        {{rsvpDescription}}
+                    </p>
 
-                        <button type="button" class="rsvp-card" data-rsvp-value="not_attending">
-                            <span class="rsvp-icon">❎</span>
-                            <strong>لن أستطيع الحضور</strong>
-                        </button>
+                    <div class="interaction-card">
 
-                        <button type="button" class="rsvp-card" data-rsvp-value="maybe">
-                            <span class="rsvp-icon">❓</span>
-                            <strong>لم أقرر بعد</strong>
-                        </button>
+                        <input class="interaction-input" type="text" placeholder="اكتب اسمك" maxlength="60"
+                            data-rsvp-name />
+
+                        <div class="rsvp-options">
+
+                            <button type="button" class="rsvp-card attending" data-rsvp-status="attending">
+                                <span class="rsvp-icon">✅</span>
+                                <strong>سأحضر</strong>
+                            </button>
+
+                            <button type="button" class="rsvp-card not-attending" data-rsvp-status="not_attending">
+                                <span class="rsvp-icon">❎</span>
+                                <strong>لن أستطيع الحضور</strong>
+                            </button>
+
+                            <button type="button" class="rsvp-card maybe" data-rsvp-status="maybe">
+                                <span class="rsvp-icon">❓</span>
+                                <strong>لم أقرر بعد</strong>
+                            </button>
+
+                        </div>
+
+                        <p class="interaction-message" data-rsvp-message></p>
+
                     </div>
+
                 </section>
 
                 <p class="closing" data-section="closing">
