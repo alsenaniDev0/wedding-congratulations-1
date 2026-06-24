@@ -50,7 +50,7 @@
                 "field": "showGroomImage",
                 "equals": "yes"
             },
-            "defaultValue": "https://placehold.co/900x1200/f5ead8/8a5a22?text=العريس",
+            "defaultValue": "https://placehold.co/900x1200/f5ead8/8a5a22?text=Groom",
             "hint": "ارفع صورة فخمة وواضحة للعريس ويفضل أن تكون بالطول"
         },
         {
